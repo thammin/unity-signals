@@ -1,0 +1,18 @@
+{
+  "name": "Thammin.UnitySignals.Editor.Tests",
+  "rootNamespace": "",
+  "references": [
+    "GUID:48aac05723aee493db7a368dabdc83ed"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
