@@ -189,7 +189,7 @@ namespace UnitySignals
                 SharedState.Instance.CurrentGetsIndex = prevIndex;
             }
 
-            if (oldValue.Equals(_value) == false && Observers != null)
+            if (oldValue?.Equals(_value) == false && Observers != null)
             {
                 foreach (var observer in Observers)
                 {
