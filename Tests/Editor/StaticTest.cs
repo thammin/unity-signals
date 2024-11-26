@@ -38,6 +38,39 @@ namespace UnitySignals.Tests
                 oldValue = b;
             });
 
+            SharedState.Stabilize();
+
+            s.Value = 5;
+            SharedState.Stabilize();
+            Assert.AreEqual(5, newValue);
+            Assert.AreEqual(1, oldValue);
+
+            s.Value = 8;
+            SharedState.Stabilize();
+            Assert.AreEqual(8, newValue);
+            Assert.AreEqual(5, oldValue);
+
+            watcher.Dispose();
+
+            s.Value = 10;
+            SharedState.Stabilize();
+            Assert.AreEqual(8, newValue);
+            Assert.AreEqual(5, oldValue);
+        }
+
+        [Test]
+        public void Create_Watcher_Immediate()
+        {
+            var s = Signal(1);
+            var newValue = 0;
+            var oldValue = 0;
+
+            var watcher = Watch(() => s.Value, (a, b) =>
+            {
+                newValue = a;
+                oldValue = b;
+            }, true);
+
             s.Value = 5;
             SharedState.Stabilize();
             Assert.AreEqual(5, newValue);

@@ -26,7 +26,8 @@ namespace UnitySignals
             return new EffectDisposer(effect);
         }
 
-        public static IDisposable Watch<T>(Func<T> func, Action<T, T> onChanged) where T : IEquatable<T>
+        public static IDisposable Watch<T>(Func<T> func, Action<T, T> onChanged, bool immediate = false)
+            where T : IEquatable<T>
         {
             var source = new Reactive<T>(func, false);
             var watcher = new Reactive<T>(() =>
@@ -35,7 +36,7 @@ namespace UnitySignals
                 return source.Value;
             }, true);
 
-            watcher.Get();
+            if (immediate) watcher.Get();
             return new EffectDisposer(watcher);
         }
     }
