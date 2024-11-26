@@ -1,0 +1,19 @@
+{
+    "name": "Thammin.UnitySignals.Runtime.Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:48aac05723aee493db7a368dabdc83ed",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
